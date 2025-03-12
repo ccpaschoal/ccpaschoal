@@ -12,16 +12,30 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Gerar Snake
-        uses: Platane/snk@v2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          user_name: ccpaschoal    # Ajuste para seu user
-          output: docs/snake.svg
+      - name: Create docs directory
+        run: mkdir -p docs  # Ensure the 'docs' directory exists
 
-      - name: Fazer push do snake.svg
+      - name: Debug Inputs
+        run: |
+          echo "Repository Owner: ${{ github.repository_owner }}"
+          echo "Outputs: |
+            docs/github-snake.svg
+            docs/github-snake-dark.svg?palette=github-dark
+            docs/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9"
+
+      - name: Gerar Snake
+        uses: Platane/snk@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}  # Use repository owner or hardcode your username
+          outputs: |
+            docs/github-snake.svg
+            docs/github-snake-dark.svg?palette=github-dark
+            docs/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
+
+      - name: Fazer push dos arquivos gerados
         uses: ad-m/github-push-action@v0.6.0
         with:
           branch: main
-          file: docs/snake.svg
+          directory: docs  # Push the 'docs' directory
+          force: true
           token: ${{ secrets.GITHUB_TOKEN }}
