@@ -25,7 +25,3 @@ jobs:
           branch: main
           file: docs/snake.svg
           token: ${{ secrets.GITHUB_TOKEN }}
-
-          branch: main
-          file: docs/snake.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
