@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Create docs directory
-        run: mkdir -p docs  # Ensure the 'docs' directory exists
+        run: mkdir -p docs
 
       - name: Debug Inputs
         run: |
@@ -24,18 +24,23 @@ jobs:
             docs/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9"
 
       - name: Gerar Snake
-        uses: Platane/snk@v3
+        uses: Platane/snk@main
         with:
-          github_user_name: ${{ github.repository_owner }}  # Use repository owner or hardcode your username
+          github_user_name: ${{ github.repository_owner }}
           outputs: |
             docs/github-snake.svg
             docs/github-snake-dark.svg?palette=github-dark
             docs/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
 
+      - name: Debug Snake Outputs
+        run: |
+          echo "Checking docs directory:"
+          ls -R docs
+
       - name: Fazer push dos arquivos gerados
         uses: ad-m/github-push-action@v0.6.0
         with:
           branch: main
-          directory: docs  # Push the 'docs' directory
+          directory: docs
           force: true
-          github_token: ${{ secrets.GITHUB_TOKEN }}  # Use 'github_token' instead of 'token'
+          github_token: ${{ secrets.GITHUB_TOKEN }}
