@@ -1,7 +1,7 @@
 # Olá, seja bem-vindo(a)!
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&duration=3000&pause=1000&color=1A9AF7&width=435&lines=Desenvolvedora+Front-End;UI%2FUX+Designer;Apaixonada+por+Tecnologia)](https://git.io/typing-svg)
 
-Sou uma desenvolvedora front-end apaixonada por criar interfaces funcionais e agradáveis, sempre focada na experiência do usuário. Possuo experiência em diversas tecnologias e estou em constante aprendizado para aprimorar minhas habilidades.
+Sou uma desenvolvedora Front-End apaixonada por criar interfaces funcionais e agradáveis, sempre focada na experiência do usuário. Possuo experiência em diversas tecnologias e estou em constante aprendizado para aprimorar minhas habilidades.
 
 ---
 
@@ -74,6 +74,7 @@ Sou uma desenvolvedora front-end apaixonada por criar interfaces funcionais e ag
 ## 📞 Contato
 
 [![Phone Badge](https://img.shields.io/badge/Phone-+55%2021%2098256--6564-blue?style=for-the-badge&logo=PhonePe&logoColor=white)](tel:+5521982566564)
+[![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-camillapaschoal-blue?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/camillapaschoal/)
 [![Email Badge](https://img.shields.io/badge/Email-camilacpaschoal%40gmail.com-red?style=for-the-badge&logo=gmail&logoColor=white)](mailto:camilacpaschoal@gmail.com)
 [![Location Badge](https://img.shields.io/badge/Local-Rio%20de%20Janeiro%2C%20RJ%2C%20Brazil-green?style=for-the-badge&logo=googlemaps&logoColor=white)](#)
 
