@@ -38,4 +38,4 @@ jobs:
           branch: main
           directory: docs  # Push the 'docs' directory
           force: true
-          token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}  # Use 'github_token' instead of 'token'
