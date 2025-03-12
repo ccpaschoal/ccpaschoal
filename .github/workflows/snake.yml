@@ -1,0 +1,31 @@
+name: Generate Snake
+
+on:
+  schedule: # Executa uma vez ao dia
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar repositório
+        uses: actions/checkout@v2
+
+      - name: Instalar Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.x"
+
+      - name: Instalar dependências
+        run: pip install requests
+
+      - name: Gerar Snake
+        run: |
+          python .github/workflows/snake_generator.py
+      - name: Commit e Push
+        uses: EndBug/add-and-commit@v7
+        with:
+          add: "."
+          message: "Gerando snake contribution grid"
