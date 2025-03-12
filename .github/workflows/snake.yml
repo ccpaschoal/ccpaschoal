@@ -2,35 +2,34 @@ name: Gera Snake
 
 on:
   schedule:
-    - cron: "0 */12 * * *"  # Executa a cada 12 horas
-  workflow_dispatch:       # Permite rodar manualmente
+    - cron: "0 */12 * * *"  # Executa a cada 12 horas (ajuste se quiser)
+  workflow_dispatch:         # Permite rodar manualmente
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      # 1. Baixar o repositório com o script do Snake
-      - name: Checkout do repositório Platane/snk
-        uses: actions/checkout@v2
-        with:
-          repository: Platane/snk
-          path: .github/workflows/snake
+      # Passo 1: Checkout do seu próprio repositório
+      - name: Checkout
+        uses: actions/checkout@v3
 
-      # 2. Gera o arquivo SVG do Snake
+      # Passo 2: Gera o arquivo SVG (Snake) usando a action do Platane
       - name: Gerar Snake
-        uses: docker://ghcr.io/platane/snk:latest
+        uses: Platane/snk/svg@v2
         with:
-          args: >
-            generate
-            --user ccpaschoal
-            --output ./docs/snake.svg
-            --branches main
+          token: ${{ secrets.GITHUB_TOKEN }}
+          user_name: ccpaschoal       # <-- Substitua aqui pelo SEU usuário
+          # O local onde o SVG será salvo (você pode mudar, ex.: docs/snake.svg)
+          output: docs/snake.svg
 
-      # 3. Fazer push do arquivo gerado para o repositório
+      # Passo 3: Fazer push do arquivo gerado para a branch principal
       - name: Fazer push do snake.svg
         uses: ad-m/github-push-action@v0.6.0
         with:
+          branch: main                # Se sua branch padrão for master, mude aqui
+          file: docs/snake.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
           branch: main
           file: docs/snake.svg
           token: ${{ secrets.GITHUB_TOKEN }}
