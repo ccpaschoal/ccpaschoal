@@ -5,9 +5,6 @@ Sou uma desenvolvedora Front-End apaixonada por criar interfaces funcionais e ag
 
 ---
 
-## Antes de tudo:
-![Snake animation](https://raw.githubusercontent.com/ccpaschoal/ccpaschoal/main/docs/snake.svg)
-
 ## ⚡ Tecnologias & Habilidades
 
 <details>
