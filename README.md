@@ -1,5 +1,5 @@
 # Olá, seja bem-vindo(a)!
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&duration=3000&pause=1000&color=1A9AF7&width=435&lines=Desenvolvedora+Front-End;UI%2FUX+Designer;AWS+Cloud+Computing)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&duration=3000&pause=1000&color=1A9AF7&width=435&lines=Front-End+Developer;AWS+Cloud+Computing)](https://git.io/typing-svg)
 
 Sou uma desenvolvedora Front-End apaixonada por criar interfaces funcionais e agradáveis, sempre focada na experiência do usuário. Possuo especialização em Computação na Nuvem, com foco nas ferramentas da AWS.
 
