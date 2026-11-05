@@ -37,27 +37,27 @@ const stats = [
 
 const font = readFileSync('assets/montserrat.woff2').toString('base64');
 const W = 600, H = 300, P = 24, G = 12;
-const tw = (W - 2 * P - G) / 2, th = 78;
+const tw = (W - 2 * P - G) / 2, th = 70;
 
 const tiles = stats.map(([k, sub, v], i) => {
-  const x = P + (i % 2) * (tw + G), y = 78 + Math.floor(i / 2) * (th + G);
+  const x = P + (i % 2) * (tw + G), y = 86 + Math.floor(i / 2) * (th + G);
   return `<g class="up" style="animation-delay:${0.1 * (i + 1)}s">
 <rect x="${x}" y="${y}" width="${tw}" height="${th}" rx="18" fill="#FFFFFF" fill-opacity=".045" stroke="#FFFFFF" stroke-opacity=".10"/>
-<text x="${x + 20}" y="${y + 50}" font-size="34" font-weight="800" letter-spacing="-1" fill="url(#num)">${v}</text>
-<text x="${x + tw - 20}" y="${y + 34}" text-anchor="end" font-size="14" font-weight="700" fill="#F1E6C8">${k}</text>
-<text x="${x + tw - 20}" y="${y + 54}" text-anchor="end" font-size="12" font-weight="500" fill="#D9DEE4" fill-opacity=".8">${sub}</text></g>`;
+<text x="${x + 20}" y="${y + 46}" font-size="32" font-weight="800" letter-spacing="-1" fill="url(#num)">${v}</text>
+<text x="${x + tw - 20}" y="${y + 31}" text-anchor="end" font-size="14" font-weight="700" fill="#F1E6C8">${k}</text>
+<text x="${x + tw - 20}" y="${y + 50}" text-anchor="end" font-size="12" font-weight="500" fill="#D9DEE4" fill-opacity=".8">${sub}</text></g>`;
 }).join('');
 
 let bx = P;
 const barW = W - 2 * P;
 const bar = top.map(l => {
   const w = Math.max(3, l.pct * barW);
-  const r = `<rect x="${bx.toFixed(1)}" y="262" width="${w.toFixed(1)}" height="8" fill="${l.color}"/>`;
+  const r = `<rect x="${bx.toFixed(1)}" y="276" width="${w.toFixed(1)}" height="6" fill="${l.color}"/>`;
   bx += w;
   return r;
 }).join('');
 const legend = top.map((l, i) =>
-  `<circle cx="${P + 5 + i * 138}" cy="${252 - 4}" r="4.5" fill="${l.color}"/><text x="${P + 16 + i * 138}" y="252" font-size="12" font-weight="600" fill="#D9DEE4">${l.name} <tspan fill-opacity=".7">${(l.pct * 100).toFixed(0)}%</tspan></text>`
+  `<circle cx="${P + 5 + i * 138}" cy="${262 - 4}" r="4.5" fill="${l.color}"/><text x="${P + 16 + i * 138}" y="262" font-size="12" font-weight="600" fill="#D9DEE4">${l.name} <tspan fill-opacity=".7">${(l.pct * 100).toFixed(0)}%</tspan></text>`
 ).join('');
 
 const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
@@ -66,14 +66,14 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" 
 text{font-family:'M','Montserrat','Segoe UI',Arial,sans-serif}
 .up{animation:up .9s cubic-bezier(.22,1,.36,1) backwards}
 @keyframes up{from{opacity:0;transform:translateY(12px)}}
-.grow{transform-origin:${P}px 266px;animation:g 1.4s cubic-bezier(.22,1,.36,1) .6s backwards}
+.grow{transform-origin:${P}px 279px;animation:g 1.4s cubic-bezier(.22,1,.36,1) .6s backwards}
 @keyframes g{from{transform:scaleX(0)}}
 </style>
 <defs>
 <clipPath id="cl"><rect width="${W}" height="${H}" rx="28"/></clipPath>
 <filter id="bl" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="55"/></filter>
 <linearGradient id="num" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F1E6C8"/><stop offset="1" stop-color="#D9B65C"/></linearGradient>
-<clipPath id="bc"><rect x="${P}" y="262" width="${barW}" height="8" rx="4"/></clipPath>
+<clipPath id="bc"><rect x="${P}" y="276" width="${barW}" height="6" rx="3"/></clipPath>
 </defs>
 <g clip-path="url(#cl)"><rect width="${W}" height="${H}" fill="#0A1F30"/>
 <g filter="url(#bl)">
@@ -86,7 +86,7 @@ text{font-family:'M','Montserrat','Segoe UI',Arial,sans-serif}
 <text x="${W - P}" y="42" text-anchor="end" font-size="11" font-weight="600" letter-spacing="1.5" fill="#D9DEE4" fill-opacity=".7">ATUALIZA SOZINHO ✦</text>
 ${tiles}
 ${legend}
-<g clip-path="url(#bc)"><rect x="${P}" y="262" width="${barW}" height="8" fill="#FFFFFF" fill-opacity=".08"/><g class="grow">${bar}</g></g>
+<g clip-path="url(#bc)"><rect x="${P}" y="276" width="${barW}" height="6" fill="#FFFFFF" fill-opacity=".08"/><g class="grow">${bar}</g></g>
 </svg>`;
 
 // ---------- sequência de dias com contribuição (último ano)
@@ -107,7 +107,7 @@ const frac = Math.min(1, current / goal);
 const side = (x, v, k, sub) => `<g class="up"><text x="${x}" y="168" text-anchor="middle" font-size="40" font-weight="800" letter-spacing="-1" fill="url(#num)">${v}</text>
 <text x="${x}" y="196" text-anchor="middle" font-size="14" font-weight="700" fill="#F1E6C8">${k}</text>
 <text x="${x}" y="216" text-anchor="middle" font-size="12" font-weight="500" fill="#D9DEE4" fill-opacity=".75">${sub}</text></g>`;
-const streak = svg.split('<text x="24" y="42"')[0].replace(/<text[\s\S]*$/, '') + `
+const streak = (svg.split('<text x="24" y="42"')[0] + `
 <text x="${P}" y="42" font-size="12" font-weight="700" letter-spacing="3" fill="#D9B65C">CONSTÂNCIA</text>
 <text x="${P}" y="64" font-size="20" font-weight="800" letter-spacing="-.5" fill="#F1E6C8">Dias seguidos criando</text>
 ${side(110, u.contributionsCollection.contributionCalendar.totalContributions, 'Contribuições', 'no último ano')}
@@ -120,7 +120,7 @@ ${side(110, u.contributionsCollection.contributionCalendar.totalContributions, '
 <text x="${W / 2}" y="282" text-anchor="middle" font-size="12" font-weight="500" fill="#D9DEE4" fill-opacity=".75">${current ? fmt(curStart) + ' → hoje' : 'comece hoje ✦'}</text>
 </g>
 ${side(W - 110, longest, 'Maior sequência', longest ? fmt(longStart) + ' → ' + fmt(longEnd) : '—')}
-</svg>`.replace('</defs>', `<linearGradient id="ring" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8B1E2D"/><stop offset="1" stop-color="#D9B65C"/></linearGradient></defs>`)
+</svg>`).replace('</defs>', `<linearGradient id="ring" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8B1E2D"/><stop offset="1" stop-color="#D9B65C"/></linearGradient></defs>`)
   .replace('</style>', `.draw{animation:dr 1.6s cubic-bezier(.22,1,.36,1) .4s backwards}@keyframes dr{from{stroke-dasharray:0 ${CIRC.toFixed(1)}}}</style>`);
 
 mkdirSync('dist', { recursive: true });
