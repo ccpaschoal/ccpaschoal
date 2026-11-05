@@ -7,7 +7,7 @@ const query = `query($login:String!){ user(login:$login){
     totalCount
     nodes{ languages(first:10, orderBy:{field:SIZE, direction:DESC}){ edges{ size node{ name } } } }
   }
-  contributionsCollection{ totalCommitContributions contributionCalendar{ totalContributions } }
+  contributionsCollection{ totalCommitContributions contributionCalendar{ totalContributions weeks{ contributionDays{ date contributionCount } } } }
 }}`;
 
 const res = await fetch('https://api.github.com/graphql', {
@@ -89,6 +89,41 @@ ${legend}
 <g clip-path="url(#bc)"><rect x="${P}" y="262" width="${barW}" height="8" fill="#FFFFFF" fill-opacity=".08"/><g class="grow">${bar}</g></g>
 </svg>`;
 
+// ---------- sequência de dias com contribuição (último ano)
+const days = u.contributionsCollection.contributionCalendar.weeks.flatMap(w => w.contributionDays);
+let longest = 0, run = 0, longEnd = null, longStart = null, runStart = null;
+for (const d of days) {
+  if (d.contributionCount > 0) { if (run === 0) runStart = d.date; run++; if (run > longest) { longest = run; longStart = runStart; longEnd = d.date; } }
+  else run = 0;
+}
+let i = days.length - 1;
+if (i >= 0 && days[i].contributionCount === 0) i--; // hoje ainda sem commit não quebra a sequência
+let current = 0, curStart = null;
+for (; i >= 0 && days[i].contributionCount > 0; i--) { current++; curStart = days[i].date; }
+const fmt = d => d ? new Date(d + 'T12:00:00Z').toLocaleDateString('pt-BR', { day: 'numeric', month: 'short', timeZone: 'UTC' }).replace('.', '') : '—';
+const R = 62, CIRC = 2 * Math.PI * R;
+const goal = Math.max(longest, 7);
+const frac = Math.min(1, current / goal);
+const side = (x, v, k, sub) => `<g class="up"><text x="${x}" y="168" text-anchor="middle" font-size="40" font-weight="800" letter-spacing="-1" fill="url(#num)">${v}</text>
+<text x="${x}" y="196" text-anchor="middle" font-size="14" font-weight="700" fill="#F1E6C8">${k}</text>
+<text x="${x}" y="216" text-anchor="middle" font-size="12" font-weight="500" fill="#D9DEE4" fill-opacity=".75">${sub}</text></g>`;
+const streak = svg.split('<text x="24" y="42"')[0].replace(/<text[\s\S]*$/, '') + `
+<text x="${P}" y="42" font-size="12" font-weight="700" letter-spacing="3" fill="#D9B65C">CONSTÂNCIA</text>
+<text x="${P}" y="64" font-size="20" font-weight="800" letter-spacing="-.5" fill="#F1E6C8">Dias seguidos criando</text>
+${side(110, u.contributionsCollection.contributionCalendar.totalContributions, 'Contribuições', 'no último ano')}
+<g class="up" style="animation-delay:.15s">
+<circle cx="${W / 2}" cy="170" r="${R}" fill="none" stroke="#FFFFFF" stroke-opacity=".08" stroke-width="10"/>
+<circle cx="${W / 2}" cy="170" r="${R}" fill="none" stroke="url(#ring)" stroke-width="10" stroke-linecap="round"
+  stroke-dasharray="${(CIRC * frac).toFixed(1)} ${CIRC.toFixed(1)}" transform="rotate(-90 ${W / 2} 170)" class="draw"/>
+<text x="${W / 2}" y="186" text-anchor="middle" font-size="48" font-weight="800" letter-spacing="-2" fill="#F1E6C8">${current}</text>
+<text x="${W / 2}" y="262" text-anchor="middle" font-size="14" font-weight="700" fill="#D9B65C">Sequência atual</text>
+<text x="${W / 2}" y="282" text-anchor="middle" font-size="12" font-weight="500" fill="#D9DEE4" fill-opacity=".75">${current ? fmt(curStart) + ' → hoje' : 'comece hoje ✦'}</text>
+</g>
+${side(W - 110, longest, 'Maior sequência', longest ? fmt(longStart) + ' → ' + fmt(longEnd) : '—')}
+</svg>`.replace('</defs>', `<linearGradient id="ring" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8B1E2D"/><stop offset="1" stop-color="#D9B65C"/></linearGradient></defs>`)
+  .replace('</style>', `.draw{animation:dr 1.6s cubic-bezier(.22,1,.36,1) .4s backwards}@keyframes dr{from{stroke-dasharray:0 ${CIRC.toFixed(1)}}}</style>`);
+
 mkdirSync('dist', { recursive: true });
 writeFileSync('dist/stats.svg', svg);
+writeFileSync('dist/streak.svg', streak);
 console.log('stats.svg gerado');

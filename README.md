@@ -33,7 +33,7 @@
 
 <p>
   <img src="https://raw.githubusercontent.com/ccpaschoal/ccpaschoal/output/stats.svg" alt="Meus números no GitHub" width="49.4%">
-  <img src="https://streak-stats.demolab.com/?user=ccpaschoal&hide_border=true&border_radius=28&card_width=600&card_height=300&background=0A1F30&ring=8B1E2D&fire=D9B65C&currStreakNum=F1E6C8&sideNums=F1E6C8&currStreakLabel=D9B65C&sideLabels=D9DEE4&dates=AEB7C2&stroke=2C5282&locale=pt_br" alt="Sequência de contribuições" width="49.4%">
+  <img src="https://raw.githubusercontent.com/ccpaschoal/ccpaschoal/output/streak.svg" alt="Sequência de contribuições" width="49.4%">
 </p>
 
 <picture>
