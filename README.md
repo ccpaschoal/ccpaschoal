@@ -1,101 +1,61 @@
-<!-- Cabeçalho animado (assets/header.svg) -->
-<p align="center">
-  <a href="https://ccpaschoal.github.io/"><img src="assets/header.svg" alt="Olá, eu sou a Camilla Paschoal · Social Media · Web Design" width="100%"></a>
-</p>
+<!-- As imagens ficam em assets/ e são geradas com a paleta do portfólio. -->
 
-<p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Montserrat&weight=600&size=21&duration=3000&pause=900&color=D9B65C&center=true&vCenter=true&width=600&lines=Designer+de+Social+Media+%E2%9C%A6;Carross%C3%A9is%2C+posts+e+stories;Web+design+feito+%C3%A0+m%C3%A3o;Ci%C3%AAncias+Matem%C3%A1ticas+%C2%B7+UFRJ" alt="Designer de Social Media · Carrosséis, posts e stories · Web design · Ciências Matemáticas UFRJ">
-</p>
+<a href="https://ccpaschoal.github.io/"><img src="https://raw.githubusercontent.com/ccpaschoal/ccpaschoal/main/assets/hero.svg" alt="Camilla Paschoal · Social Media & Web Design · Rio de Janeiro · Ciências Matemáticas UFRJ" width="100%"></a>
 
-<p align="center">
-  <a href="https://ccpaschoal.github.io/"><img src="https://img.shields.io/badge/Portf%C3%B3lio-ccpaschoal.github.io-8B1E2D?style=for-the-badge&logo=githubpages&logoColor=F1E6C8" alt="Portfólio"></a>
-  <a href="https://instagram.com/camillapaschoal"><img src="https://img.shields.io/badge/Instagram-@camillapaschoal-2C5282?style=for-the-badge&logo=instagram&logoColor=F1E6C8" alt="Instagram"></a>
-  <a href="https://www.linkedin.com/in/camillapaschoal/"><img src="https://img.shields.io/badge/LinkedIn-camillapaschoal-0F2A40?style=for-the-badge&logo=linkedin&logoColor=F1E6C8" alt="LinkedIn"></a>
-  <img src="https://komarev.com/ghpvc/?username=ccpaschoal&label=visitas&color=D9B65C&style=for-the-badge" alt="Visitas">
+<br>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ccpaschoal/ccpaschoal/main/assets/t-sobre-dark.svg">
+  <img src="https://raw.githubusercontent.com/ccpaschoal/ccpaschoal/main/assets/t-sobre-light.svg" alt="01 Quem sou eu" width="100%">
+</picture>
+
+<img src="https://raw.githubusercontent.com/ccpaschoal/ccpaschoal/main/assets/bento.svg" alt="Sobre mim: transformo ideias em conteúdo visual para redes sociais. Formação: UFRJ, Bacharelado em Ciências Matemáticas. Social Media, Web Design e Ferramentas: Canva, Figma, HTML, CSS, JavaScript, Git e GitHub Pages." width="100%">
+
+<br><br>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ccpaschoal/ccpaschoal/main/assets/t-sites-dark.svg">
+  <img src="https://raw.githubusercontent.com/ccpaschoal/ccpaschoal/main/assets/t-sites-light.svg" alt="02 Sites que eu criei" width="100%">
+</picture>
+
+<p>
+  <a href="https://ccpaschoal.github.io/"><img src="https://raw.githubusercontent.com/ccpaschoal/ccpaschoal/main/assets/proj-portfolio.svg" alt="Meu portfólio" width="32.6%"></a>
+  <a href="https://ccpaschoal.github.io/vanessachavestdah/"><img src="https://raw.githubusercontent.com/ccpaschoal/ccpaschoal/main/assets/proj-vanessa.svg" alt="Site Vanessa Chaves" width="32.6%"></a>
+  <a href="https://ccpaschoal.github.io/aconchegoeventos/"><img src="https://raw.githubusercontent.com/ccpaschoal/ccpaschoal/main/assets/proj-aconchego.svg" alt="Site Aconchego Festas e Eventos" width="32.6%"></a>
 </p>
 
 <br>
 
-## 🎨 Sobre mim
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ccpaschoal/ccpaschoal/main/assets/t-github-dark.svg">
+  <img src="https://raw.githubusercontent.com/ccpaschoal/ccpaschoal/main/assets/t-github-light.svg" alt="03 Meu GitHub" width="100%">
+</picture>
 
-Oi! Eu sou a **Camilla**, designer de **social media** e **web design** no Rio de Janeiro.
-Transformo ideias em conteúdo visual para redes sociais, com cuidado em cada detalhe: tipografia, cor e composição.
-
-> ✦ *Cada peça deve transmitir uma mensagem, não só preencher o feed.*
-
-- 🎓 Estudante de **Bacharelado em Ciências Matemáticas** na **UFRJ**
-- 📱 Crio conteúdo para marcas, profissionais autônomos e criadores
-- 💻 Desenvolvo sites em HTML, CSS e JavaScript
-- 📍 Rio de Janeiro, Brasil
-
-<br>
-
-## ✨ O que eu faço
-
-<p align="center">
-  <img src="assets/card-social.svg" alt="Social Media: posts, carrosséis, stories, identidade visual, materiais promocionais e pacotes de conteúdo" width="49%">
-  <img src="assets/card-web.svg" alt="Web Design: sites responsivos, layout, animações, modo claro e escuro, HTML, CSS e JavaScript" width="49%">
+<p>
+  <img src="https://raw.githubusercontent.com/ccpaschoal/ccpaschoal/output/stats.svg" alt="Meus números no GitHub" width="49.4%">
+  <img src="https://streak-stats.demolab.com/?user=ccpaschoal&hide_border=true&border_radius=28&card_width=600&card_height=300&background=0A1F30&ring=8B1E2D&fire=D9B65C&currStreakNum=F1E6C8&sideNums=F1E6C8&currStreakLabel=D9B65C&sideLabels=D9DEE4&dates=AEB7C2&stroke=2C5282&locale=pt_br" alt="Sequência de contribuições" width="49.4%">
 </p>
 
-<br>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ccpaschoal/ccpaschoal/output/snake-dark.svg">
+  <img alt="Cobrinha comendo os quadradinhos de contribuição" src="https://raw.githubusercontent.com/ccpaschoal/ccpaschoal/output/snake.svg" width="100%">
+</picture>
 
-## 🌐 Sites que eu criei
+<br><br>
 
-<p align="center">
-  <a href="https://ccpaschoal.github.io/"><img src="assets/proj-portfolio.svg" alt="Meu portfólio" width="32%"></a>
-  <a href="https://ccpaschoal.github.io/vanessachavestdah/"><img src="assets/proj-vanessa.svg" alt="Site Vanessa Chaves" width="32%"></a>
-  <a href="https://ccpaschoal.github.io/aconchegoeventos/"><img src="assets/proj-aconchego.svg" alt="Site Aconchego Festas e Eventos" width="32%"></a>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ccpaschoal/ccpaschoal/main/assets/t-contato-dark.svg">
+  <img src="https://raw.githubusercontent.com/ccpaschoal/ccpaschoal/main/assets/t-contato-light.svg" alt="04 Vamos conversar?" width="100%">
+</picture>
+
+<p>
+  <a href="https://wa.me/5521982566564"><img src="https://raw.githubusercontent.com/ccpaschoal/ccpaschoal/main/assets/btn-whatsapp.svg" alt="WhatsApp (21) 98256-6564" width="24.2%"></a>
+  <a href="mailto:camillacpaschoal@gmail.com"><img src="https://raw.githubusercontent.com/ccpaschoal/ccpaschoal/main/assets/btn-email.svg" alt="E-mail camillacpaschoal@gmail.com" width="24.2%"></a>
+  <a href="https://instagram.com/camillapaschoal"><img src="https://raw.githubusercontent.com/ccpaschoal/ccpaschoal/main/assets/btn-instagram.svg" alt="Instagram @camillapaschoal" width="24.2%"></a>
+  <a href="https://www.linkedin.com/in/camillapaschoal/"><img src="https://raw.githubusercontent.com/ccpaschoal/ccpaschoal/main/assets/btn-linkedin.svg" alt="LinkedIn camillapaschoal" width="24.2%"></a>
 </p>
 
-<br>
-
-## 🛠️ Ferramentas
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Canva-0F2A40?style=for-the-badge&logo=canva&logoColor=F1E6C8" alt="Canva">
-  <img src="https://img.shields.io/badge/Figma-2C5282?style=for-the-badge&logo=figma&logoColor=F1E6C8" alt="Figma">
-  <img src="https://img.shields.io/badge/HTML5-8B1E2D?style=for-the-badge&logo=html5&logoColor=F1E6C8" alt="HTML5">
-  <img src="https://img.shields.io/badge/CSS3-6E1622?style=for-the-badge&logo=css&logoColor=F1E6C8" alt="CSS3">
-  <img src="https://img.shields.io/badge/JavaScript-1A3A52?style=for-the-badge&logo=javascript&logoColor=F1E6C8" alt="JavaScript">
-  <img src="https://img.shields.io/badge/Git-4A7BA7?style=for-the-badge&logo=git&logoColor=F1E6C8" alt="Git">
-  <img src="https://img.shields.io/badge/GitHub_Pages-0F2A40?style=for-the-badge&logo=githubpages&logoColor=F1E6C8" alt="GitHub Pages">
-</p>
-
-<br>
-
-## 📊 Meu GitHub
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/ccpaschoal/ccpaschoal/output/stats.svg" alt="Estatísticas do GitHub" width="49%">
-  <img src="https://streak-stats.demolab.com/?user=ccpaschoal&hide_border=true&border_radius=18&background=0F2A40&ring=8B1E2D&fire=D9B65C&currStreakNum=F1E6C8&sideNums=F1E6C8&currStreakLabel=D9B65C&sideLabels=D9DEE4&dates=AEB7C2&stroke=2C5282&locale=pt_br&card_height=230" alt="Sequência de contribuições" width="49%">
-</p>
-
-<br>
-
-## 🐍 A cobrinha dos meus commits
-
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ccpaschoal/ccpaschoal/output/snake-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ccpaschoal/ccpaschoal/output/snake.svg">
-    <img alt="Cobrinha comendo os quadradinhos de contribuição" src="https://raw.githubusercontent.com/ccpaschoal/ccpaschoal/output/snake.svg">
-  </picture>
-</p>
-
-<br>
-
-## 💌 Vamos conversar?
-
-<p align="center">
-  Tem uma ideia ou um projeto? Vai ser um prazer pensar em como transformá-lo em conteúdo.
-</p>
-
-<p align="center">
-  <a href="https://wa.me/5521982566564"><img src="https://img.shields.io/badge/WhatsApp-Mensagem-8B1E2D?style=for-the-badge&logo=whatsapp&logoColor=F1E6C8" alt="WhatsApp"></a>
-  <a href="mailto:camillacpaschoal@gmail.com"><img src="https://img.shields.io/badge/Email-camillacpaschoal@gmail.com-2C5282?style=for-the-badge&logo=gmail&logoColor=F1E6C8" alt="Email"></a>
-  <a href="https://ccpaschoal.github.io/"><img src="https://img.shields.io/badge/Portf%C3%B3lio-Ver%20trabalhos-0F2A40?style=for-the-badge&logo=googlechrome&logoColor=F1E6C8" alt="Portfólio"></a>
-</p>
-
-<p align="center">
-  <img src="assets/footer.svg" alt="Cada detalhe pensado com carinho" width="100%">
-</p>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ccpaschoal/ccpaschoal/main/assets/footer-dark.svg">
+  <img src="https://raw.githubusercontent.com/ccpaschoal/ccpaschoal/main/assets/footer-light.svg" alt="Cada detalhe pensado com carinho · Camilla Paschoal · 2026" width="100%">
+</picture>
