@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="170" viewBox="0 0 300 170"><style>
+.t{font:700 22px 'Montserrat','Segoe UI','Helvetica Neue',Arial,sans-serif;fill:#F1E6C8}
+.s{font:600 12px 'Montserrat','Segoe UI','Helvetica Neue',Arial,sans-serif;fill:#D9B65C;letter-spacing:3px}
+.i{font:500 15px 'Montserrat','Segoe UI','Helvetica Neue',Arial,sans-serif;fill:#D9DEE4}
+.d{font:500 14px 'Montserrat','Segoe UI','Helvetica Neue',Arial,sans-serif;fill:#D9DEE4}
+.lk{font:700 13px 'Montserrat','Segoe UI','Helvetica Neue',Arial,sans-serif;fill:#F1E6C8;letter-spacing:1px}
+.row{animation:in .7s cubic-bezier(.22,1,.36,1) backwards}
+@keyframes in{from{opacity:0;transform:translateX(-10px)}to{opacity:1;transform:none}}
+.pulse{animation:p 2.6s ease-in-out infinite;transform-origin:center;transform-box:fill-box}
+@keyframes p{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+</style><defs><linearGradient id="b" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#0F2A40"/><stop offset="1" stop-color="#1A3A52"/></linearGradient>
+<clipPath id="c"><rect width="300" height="170" rx="18"/></clipPath></defs>
+<rect width="300" height="170" rx="18" fill="url(#b)"/>
+<rect x="0.5" y="0.5" width="299" height="169" rx="18" fill="none" stroke="#2C5282"/>
+<rect x="0" y="0" width="300" height="6" fill="#D9B65C" clip-path="url(#c)"/>
+<circle cx="44" cy="54" r="22" fill="#D9B65C" opacity=".25" class="pulse"/>
+<text x="44" y="63" text-anchor="middle" font-size="22">🎉</text>
+<text x="76" y="62" class="t" style="font-size:18px">Aconchego</text>
+<text x="24" y="102" class="d">Festas e eventos · Trindade-GO</text>
+<rect x="24" y="122" width="112" height="28" rx="14" fill="#D9B65C"/>
+<text x="80" y="141" text-anchor="middle" class="lk" style="fill:#0F2A40">ABRIR SITE ›</text></svg>

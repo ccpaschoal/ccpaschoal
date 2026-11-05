@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="320" viewBox="0 0 440 320"><style>
+.t{font:700 22px 'Montserrat','Segoe UI','Helvetica Neue',Arial,sans-serif;fill:#F1E6C8}
+.s{font:600 12px 'Montserrat','Segoe UI','Helvetica Neue',Arial,sans-serif;fill:#D9B65C;letter-spacing:3px}
+.i{font:500 15px 'Montserrat','Segoe UI','Helvetica Neue',Arial,sans-serif;fill:#D9DEE4}
+.d{font:500 14px 'Montserrat','Segoe UI','Helvetica Neue',Arial,sans-serif;fill:#D9DEE4}
+.lk{font:700 13px 'Montserrat','Segoe UI','Helvetica Neue',Arial,sans-serif;fill:#F1E6C8;letter-spacing:1px}
+.row{animation:in .7s cubic-bezier(.22,1,.36,1) backwards}
+@keyframes in{from{opacity:0;transform:translateX(-10px)}to{opacity:1;transform:none}}
+.pulse{animation:p 2.6s ease-in-out infinite;transform-origin:center;transform-box:fill-box}
+@keyframes p{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+</style><defs><linearGradient id="b" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#0F2A40"/><stop offset="1" stop-color="#1A3A52"/></linearGradient>
+<clipPath id="c"><rect width="440" height="320" rx="18"/></clipPath></defs>
+<rect width="440" height="320" rx="18" fill="url(#b)"/>
+<rect x="0.5" y="0.5" width="439" height="319" rx="18" fill="none" stroke="#2C5282"/>
+<rect x="0" y="0" width="440" height="6" fill="#8B1E2D" clip-path="url(#c)"/>
+<circle cx="386" cy="58" r="30" fill="#8B1E2D" opacity=".25" class="pulse"/>
+<text x="386" y="68" text-anchor="middle" font-size="28">📱</text>
+<text x="30" y="50" class="s">DESIGN PARA REDES</text>
+<text x="30" y="82" class="t">Social Media</text>
+<g class="row" style="animation-delay:0.15s"><circle cx="34" cy="122" r="4" fill="#8B1E2D"/><text x="50" y="127" class="i">Posts para redes sociais</text></g><g class="row" style="animation-delay:0.30s"><circle cx="34" cy="152" r="4" fill="#8B1E2D"/><text x="50" y="157" class="i">Carrosséis criativos e educativos</text></g><g class="row" style="animation-delay:0.45s"><circle cx="34" cy="182" r="4" fill="#8B1E2D"/><text x="50" y="187" class="i">Stories</text></g><g class="row" style="animation-delay:0.60s"><circle cx="34" cy="212" r="4" fill="#8B1E2D"/><text x="50" y="217" class="i">Identidade visual para redes</text></g><g class="row" style="animation-delay:0.75s"><circle cx="34" cy="242" r="4" fill="#8B1E2D"/><text x="50" y="247" class="i">Materiais promocionais</text></g><g class="row" style="animation-delay:0.90s"><circle cx="34" cy="272" r="4" fill="#8B1E2D"/><text x="50" y="277" class="i">Pacotes de conteúdo</text></g></svg>
