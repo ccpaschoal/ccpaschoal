@@ -58,6 +58,16 @@ Transformo ideias em conteúdo visual para redes sociais: carrosséis, posts, st
 
 ---
 
+## 🌐 Sites que eu criei
+
+| Projeto | Sobre | Ver |
+| --- | --- | --- |
+| 🎨 **Meu portfólio** | Meus trabalhos de design de social media | [ccpaschoal.github.io](https://ccpaschoal.github.io/) |
+| 💜 **Vanessa Chaves** | Orientação parental TDAH \| TEA | [abrir site](https://ccpaschoal.github.io/vanessachavestdah/) |
+| 🎉 **Aconchego Festas e Eventos** | Espaço de eventos em Trindade-GO | [abrir site](https://ccpaschoal.github.io/aconchegoeventos/) |
+
+---
+
 ## 🛠️ Ferramentas
 
 <p align="center">
