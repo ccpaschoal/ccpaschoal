@@ -25,7 +25,7 @@ Transformo ideias em conteúdo visual para redes sociais, com cuidado em cada de
 
 - 🎓 Estudante de **Bacharelado em Ciências Matemáticas** na **UFRJ**
 - 📱 Crio conteúdo para marcas, profissionais autônomos e criadores
-- 💻 Desenvolvo sites à mão, em HTML, CSS e JavaScript
+- 💻 Desenvolvo sites em HTML, CSS e JavaScript
 - 📍 Rio de Janeiro, Brasil
 
 <br>
