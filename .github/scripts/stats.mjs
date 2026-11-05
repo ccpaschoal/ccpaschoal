@@ -21,20 +21,21 @@ if (!json.data?.user) throw new Error(JSON.stringify(json));
 const u = json.data.user;
 
 const repos = u.repositories.nodes;
-const stars = repos.reduce((s, r) => s + r.stargazerCount, 0);
 const langs = {};
 for (const r of repos) for (const e of r.languages.edges) {
   langs[e.node.name] ??= { size: 0, color: e.node.color || '#AEB7C2' };
   langs[e.node.name].size += e.size;
 }
 const total = Object.values(langs).reduce((s, l) => s + l.size, 0) || 1;
-const top = Object.entries(langs).sort((a, b) => b[1].size - a[1].size).slice(0, 4);
+const PALETTE = ['#8B1E2D', '#D9B65C', '#6BA3D8', '#F1E6C8'];
+const top = Object.entries(langs).sort((a, b) => b[1].size - a[1].size).slice(0, 4)
+  .map(([n, l], i) => [n, { ...l, color: PALETTE[i] }]);
 
 const stats = [
   ['Contribuições no último ano', u.contributionsCollection.contributionCalendar.totalContributions],
   ['Commits no último ano', u.contributionsCollection.totalCommitContributions],
   ['Repositórios públicos', u.repositories.totalCount],
-  ['Estrelas recebidas', stars],
+  ['Linguagens usadas', Object.keys(langs).length],
 ];
 
 const W = 480, H = 230;
