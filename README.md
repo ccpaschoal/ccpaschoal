@@ -1,6 +1,6 @@
 <!-- As imagens ficam em assets/ e são geradas com a paleta do portfólio. -->
 
-<a href="https://ccpaschoal.github.io/"><img src="https://raw.githubusercontent.com/ccpaschoal/ccpaschoal/main/assets/hero.svg" alt="Camilla Paschoal · Social Media & Web Design · Rio de Janeiro · Ciências Matemáticas UFRJ" width="100%"></a>
+<a href="https://ccpaschoal.github.io/"><img src="https://raw.githubusercontent.com/ccpaschoal/ccpaschoal/main/assets/hero.svg" alt="Banner com o nome Camilla Paschoal em neon vermelho · Social Media & Web Design · Rio de Janeiro" width="100%"></a>
 
 <br>
 
@@ -21,7 +21,9 @@
 <p>
   <a href="https://ccpaschoal.github.io/"><img src="https://raw.githubusercontent.com/ccpaschoal/ccpaschoal/main/assets/proj-portfolio.svg" alt="Meu portfólio" width="32.6%"></a>
   <a href="https://ccpaschoal.github.io/vanessachavestdah/"><img src="https://raw.githubusercontent.com/ccpaschoal/ccpaschoal/main/assets/proj-vanessa.svg" alt="Site Vanessa Chaves" width="32.6%"></a>
-  <a href="https://ccpaschoal.github.io/aconchegoeventos/"><img src="https://raw.githubusercontent.com/ccpaschoal/ccpaschoal/main/assets/proj-aconchego.svg" alt="Site Aconchego Festas e Eventos" width="32.6%"></a>
+  <a href="https://aconchegoeventos.pages.dev/"><img src="https://raw.githubusercontent.com/ccpaschoal/ccpaschoal/main/assets/proj-aconchego.svg" alt="Site Aconchego Festas e Eventos" width="32.6%"></a>
+  <a href="https://ccpaschoal.github.io/hamburgueria/"><img src="https://raw.githubusercontent.com/ccpaschoal/ccpaschoal/main/assets/proj-chapa.svg" alt="Site da hamburgueria Chapa 62" width="32.6%"></a>
+  <a href="https://lojaaura.pages.dev/"><img src="https://raw.githubusercontent.com/ccpaschoal/ccpaschoal/main/assets/proj-aura.svg" alt="Loja AURA" width="32.6%"></a>
 </p>
 
 <br>

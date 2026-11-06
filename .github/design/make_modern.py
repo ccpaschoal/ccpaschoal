@@ -13,10 +13,11 @@ FACE = ("@font-face{font-family:'M';font-weight:100 900;"
         f"src:url(data:font/woff2;base64,{FONT}) format('woff2')}}")
 FF = "'M','Montserrat','Segoe UI',Arial,sans-serif"
 
-NAVY, NAVY2, DEEP = '#0F2A40', '#1A3A52', '#0A1F30'
-BLUE, BLUE2, SKY = '#2C5282', '#4A7BA7', '#6BA3D8'
-WINE, WINE2 = '#8B1E2D', '#6E1622'
-SAND, GOLD, GRAY = '#F1E6C8', '#D9B65C', '#D9DEE4'
+# Paleta do banner e da logo CP: preto + vermelho e laranja neon
+NAVY, NAVY2, DEEP = '#141414', '#1E1E1E', '#0A0A0A'
+BLUE, BLUE2, SKY = '#5A0A06', '#E0442C', '#FF6A45'
+WINE, WINE2 = '#FF2B1C', '#B3120A'
+SAND, GOLD, GRAY = '#F5EDEA', '#FF6A45', '#CFC6C3'
 
 def esc(t):
     return t.replace('&', '&amp;').replace('<', '&lt;')
@@ -71,60 +72,26 @@ def chip(x, y, t, size=14, pad=16, h=34, fill_op='.07', color=GRAY):
 
 # ---------------------------------------------------------------- HERO
 def hero():
+    """Banner com o nome completo (arte da Camilla) + selo de disponível."""
     W, H = 1200, 460
-    body = [mesh(W, H, 28, [
-        (180, 420, 230, WINE, .85, 60, -40),
-        (620, -20, 220, BLUE, .9, -50, 40),
-        (1080, 430, 210, SKY, .45, -40, -30),
-        (980, 60, 160, WINE2, .55, 30, 40)], 'h')]
-    # grade de pontos
-    body.append('<defs><pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">'
-                '<circle cx="1.5" cy="1.5" r="1.2" fill="#FFFFFF"/></pattern>'
-                f'<linearGradient id="nm" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="{SAND}"/>'
-                f'<stop offset=".5" stop-color="{GOLD}"/><stop offset="1" stop-color="{SAND}"/>'
-                '<animate attributeName="x1" values="0;-1;0" dur="8s" repeatCount="indefinite"/>'
-                '<animate attributeName="x2" values="1;2;1" dur="8s" repeatCount="indefinite"/></linearGradient>'
-                '<filter id="sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#000" flood-opacity=".45"/></filter>'
-                '</defs>')
-    body.append(f'<rect width="{W}" height="{H}" rx="28" fill="url(#dots)" opacity=".06"/>')
-    # selo "disponível"
+    img = b64(os.path.join(S, 'banner.jpg'))
+    body = [f'<defs><clipPath id="hc"><rect width="{W}" height="{H}" rx="28"/></clipPath></defs>',
+            f'<g clip-path="url(#hc)"><rect width="{W}" height="{H}" fill="{DEEP}"/>'
+            f'<image width="{W}" height="{H}" preserveAspectRatio="xMidYMid slice" '
+            f'href="data:image/jpeg;base64,{img}" xlink:href="data:image/jpeg;base64,{img}"/></g>',
+            f'<rect x=".5" y=".5" width="{W-1}" height="{H-1}" rx="28" fill="none" stroke="{WINE}" stroke-opacity=".35"/>']
     body.append('<g class="up">'
-                f'<rect x="64" y="62" width="318" height="36" rx="18" fill="#FFFFFF" fill-opacity=".07" stroke="#FFFFFF" stroke-opacity=".16"/>'
-                f'<circle cx="86" cy="80" r="5" fill="{GOLD}" class="pulse"/><circle cx="86" cy="80" r="5" fill="{GOLD}"/>'
-                f'<text x="102" y="85" font-size="12.5" font-weight="700" letter-spacing="2.2" fill="{SAND}">DISPONÍVEL PARA PROJETOS</text></g>')
-    body.append(f'<g class="up" style="animation-delay:.12s"><text x="60" y="190" font-size="92" font-weight="800" letter-spacing="-3" fill="{SAND}">Camilla</text></g>')
-    body.append(f'<g class="up" style="animation-delay:.24s"><text x="60" y="282" font-size="92" font-weight="800" letter-spacing="-3" fill="url(#nm)">Paschoal</text></g>')
-    body.append(f'<g class="up" style="animation-delay:.36s"><text x="64" y="330" font-size="24" font-weight="600" fill="{GRAY}">Social Media <tspan fill="{GOLD}">&amp;</tspan> Web Design</text></g>')
-    x = 64
+                f'<rect x="48" y="40" width="318" height="36" rx="18" fill="#000" fill-opacity=".55" stroke="{GOLD}" stroke-opacity=".5"/>'
+                f'<circle cx="70" cy="58" r="5" fill="{WINE}" class="pulse"/><circle cx="70" cy="58" r="5" fill="{WINE}"/>'
+                f'<text x="86" y="63" font-size="12.5" font-weight="700" letter-spacing="2.2" fill="{SAND}">DISPONÍVEL PARA PROJETOS</text></g>')
+    x = W - 48
     chips = []
-    for t in ['Rio de Janeiro', 'Ciências Matemáticas · UFRJ']:
-        c, w = chip(x, 362, t)
-        chips.append(c); x += w + 10
-    body.append(f'<g class="up" style="animation-delay:.48s">{"".join(chips)}</g>')
-
-    # leque de posts (trabalhos reais)
-    posts = ['3-nem-todo-comportamento/capa-thumb.webp', '1-o-lugar-perfeito/capa-thumb.webp',
-             '2-calma-em-casa/capa-thumb.webp', '0-apresentacao/1-thumb.webp']
-    pw, ph = 176, 220
-    cfg = [(-13, 676, 132), (-4, 783, 102), (5, 890, 102), (13, 990, 132)]
-    body.append('<g>')
-    for i, (p, (rot, cx, cy)) in enumerate(zip(posts, cfg)):
-        data = b64(os.path.join(CAR, p))
-        body.append(
-            f'<g><animateTransform attributeName="transform" type="translate" values="0 0;0 -{10 + i*2};0 0" '
-            f'dur="{5 + i * .7}s" begin="-{i * .9}s" repeatCount="indefinite"/>'
-            f'<g transform="rotate({rot} {cx + pw/2} {cy + ph/2})" filter="url(#sh)">'
-            f'<clipPath id="pc{i}"><rect x="{cx}" y="{cy}" width="{pw}" height="{ph}" rx="18"/></clipPath>'
-            f'<rect x="{cx}" y="{cy}" width="{pw}" height="{ph}" rx="18" fill="{NAVY}"/>'
-            f'<image x="{cx}" y="{cy}" width="{pw}" height="{ph}" preserveAspectRatio="xMidYMid slice" clip-path="url(#pc{i})" '
-            f'href="data:image/webp;base64,{data}" xlink:href="data:image/webp;base64,{data}"/>'
-            f'<rect x="{cx+.5}" y="{cy+.5}" width="{pw-1}" height="{ph-1}" rx="18" fill="none" stroke="#FFFFFF" stroke-opacity=".25"/>'
-            '</g></g>')
-    body.append('</g>')
-    # brilhos
-    for (sx, sy, d) in [(720, 70, 0), (1150, 110, 1.1), (690, 400, 2), (1130, 380, .6)]:
-        body.append(f'<path class="tw" style="animation-delay:{d}s" fill="{SAND}" '
-                    f'd="M{sx} {sy-9} L{sx+2.5} {sy-2.5} L{sx+9} {sy} L{sx+2.5} {sy+2.5} L{sx} {sy+9} L{sx-2.5} {sy+2.5} L{sx-9} {sy} L{sx-2.5} {sy-2.5}Z"/>')
+    for t in reversed(['Social Media & Web Design', 'Rio de Janeiro']):
+        c, w = chip(0, 0, t)
+        x -= w
+        chips.append(chip(x, 40, t, fill_op='.55', color=SAND)[0].replace('fill="#FFFFFF" fill-opacity=".55"', 'fill="#000" fill-opacity=".55"', 1))
+        x -= 10
+    body.append(f'<g class="up" style="animation-delay:.2s">{"".join(chips)}</g>')
     write('hero.svg', svg(W, H, ''.join(body), ANIM))
 
 # ---------------------------------------------------------------- BENTO
@@ -218,7 +185,7 @@ def project(name, file, title, desc, url, accent, uid):
     body.append(f'<text x="24" y="{ty}" font-size="21" font-weight="700" letter-spacing="-.4" fill="{SAND}">{esc(title)}</text>')
     body.append(f'<text x="24" y="{ty+26}" font-size="14" font-weight="500" fill="{GRAY}">{esc(desc)}</text>')
     body.append(f'<circle cx="{W-44}" cy="{ty+4}" r="20" fill="{accent}"/>'
-                f'<path d="M{W-50} {ty+10} L{W-38} {ty-2} M{W-47} {ty-2} L{W-38} {ty-2} L{W-38} {ty+7}" stroke="{NAVY if accent == GOLD else SAND}" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>')
+                f'<path d="M{W-50} {ty+10} L{W-38} {ty-2} M{W-47} {ty-2} L{W-38} {ty-2} L{W-38} {ty+7}" stroke="{NAVY if accent in (GOLD, SKY) else SAND}" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>')
     write(name, svg(W, H, ''.join(body), ANIM))
 
 # ---------------------------------------------------------------- TÍTULOS DE SEÇÃO (claro e escuro)
@@ -253,7 +220,9 @@ def footer():
 hero(); bento()
 project('proj-portfolio.svg', 'portfolio.jpg', 'Meu portfólio', 'Design de social media', 'ccpaschoal.github.io', WINE, 'p1')
 project('proj-vanessa.svg', 'vanessa.jpg', 'Vanessa Chaves', 'Orientação parental TDAH | TEA', 'ccpaschoal.github.io/vanessachavestdah', BLUE2, 'p2')
-project('proj-aconchego.svg', 'aconchego.jpg', 'Aconchego', 'Festas e eventos · Trindade-GO', 'ccpaschoal.github.io/aconchegoeventos', GOLD, 'p3')
+project('proj-aconchego.svg', 'aconchego.jpg', 'Aconchego', 'Festas e eventos · Trindade-GO', 'aconchegoeventos.pages.dev', GOLD, 'p3')
+project('proj-chapa.svg', 'chapa.jpg', 'Chapa 62', 'Hamburgueria · pedido no WhatsApp', 'ccpaschoal.github.io/hamburgueria', WINE2, 'p4')
+project('proj-aura.svg', 'aura.jpg', 'AURA', 'Loja de fone Bluetooth', 'lojaaura.pages.dev', SKY, 'p5')
 for n, num, t in [('t-sobre', '01', 'Quem sou eu'), ('t-sites', '02', 'Sites que eu criei'),
                   ('t-github', '03', 'Meu GitHub'), ('t-contato', '04', 'Vamos conversar?')]:
     label(n, num, t)
