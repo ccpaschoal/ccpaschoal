@@ -24,6 +24,7 @@
   <a href="https://aconchegoeventos.pages.dev/"><img src="https://raw.githubusercontent.com/ccpaschoal/ccpaschoal/main/assets/proj-aconchego.svg" alt="Site Aconchego Festas e Eventos" width="32.6%"></a>
   <a href="https://ccpaschoal.github.io/hamburgueria/"><img src="https://raw.githubusercontent.com/ccpaschoal/ccpaschoal/main/assets/proj-chapa.svg" alt="Site da hamburgueria Chapa 62" width="32.6%"></a>
   <a href="https://lojaaura.pages.dev/"><img src="https://raw.githubusercontent.com/ccpaschoal/ccpaschoal/main/assets/proj-aura.svg" alt="Loja AURA" width="32.6%"></a>
+  <a href="https://ccpaschoal.github.io/meu-portfolio-webgl/"><img src="https://raw.githubusercontent.com/ccpaschoal/ccpaschoal/main/assets/proj-webgl.svg" alt="Meu portfólio WebGL" width="32.6%"></a>
 </p>
 
 <br>

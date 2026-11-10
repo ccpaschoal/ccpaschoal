@@ -8,7 +8,24 @@ def b64(path):
     with open(path, 'rb') as f:
         return base64.b64encode(f.read()).decode()
 
-FONT = b64(os.path.join(S, 'font', 'montserrat.woff2'))
+# Resolução flexível de arquivos (diretório de entrada ou .github/design / assets)
+DESIGN_DIR = os.path.dirname(os.path.abspath(__file__))
+REPO_DIR = os.path.abspath(os.path.join(DESIGN_DIR, '..', '..'))
+ASSETS_DIR = os.path.join(REPO_DIR, 'assets')
+
+def resolve_path(*parts):
+    for candidate in [
+        os.path.join(S, *parts),
+        os.path.join(S, 'shots', *parts),
+        os.path.join(S, 'font', *parts),
+        os.path.join(DESIGN_DIR, *parts),
+        os.path.join(ASSETS_DIR, *parts),
+    ]:
+        if os.path.exists(candidate):
+            return candidate
+    return os.path.join(S, *parts)
+
+FONT = b64(resolve_path('montserrat.woff2'))
 FACE = ("@font-face{font-family:'M';font-weight:100 900;"
         f"src:url(data:font/woff2;base64,{FONT}) format('woff2')}}")
 FF = "'M','Montserrat','Segoe UI',Arial,sans-serif"
@@ -74,7 +91,7 @@ def chip(x, y, t, size=14, pad=16, h=34, fill_op='.07', color=GRAY):
 def hero():
     """Banner com o nome completo (arte da Camilla) + selo de disponível."""
     W, H = 1200, 460
-    img = b64(os.path.join(S, 'banner.jpg'))
+    img = b64(resolve_path('banner.jpg'))
     body = [f'<defs><clipPath id="hc"><rect width="{W}" height="{H}" rx="28"/></clipPath></defs>',
             f'<g clip-path="url(#hc)"><rect width="{W}" height="{H}" fill="{DEEP}"/>'
             f'<image width="{W}" height="{H}" preserveAspectRatio="xMidYMid slice" '
@@ -164,7 +181,7 @@ def bento():
 # ---------------------------------------------------------------- PROJETOS
 def project(name, file, title, desc, url, accent, uid):
     W, H = 400, 360
-    img = b64(os.path.join(S, 'shots', file))
+    img = b64(resolve_path(file))
     body = [mesh(W, H, 24, [(60, 330, 130, accent, .55, 20, -20), (360, 20, 120, BLUE, .6, -20, 20)], uid)]
     # janela do navegador
     bx, by, bw = 20, 20, W - 40
@@ -223,6 +240,7 @@ project('proj-vanessa.svg', 'vanessa.jpg', 'Vanessa Chaves', 'Orientação paren
 project('proj-aconchego.svg', 'aconchego.jpg', 'Aconchego', 'Festas e eventos · Trindade-GO', 'aconchegoeventos.pages.dev', GOLD, 'p3')
 project('proj-chapa.svg', 'chapa.jpg', 'Chapa 62', 'Hamburgueria · pedido no WhatsApp', 'ccpaschoal.github.io/hamburgueria', WINE2, 'p4')
 project('proj-aura.svg', 'aura.jpg', 'AURA', 'Loja de fone Bluetooth', 'lojaaura.pages.dev', SKY, 'p5')
+project('proj-webgl.svg', 'webgl.jpg', 'Meu portfólio WebGL', 'Experiência 3D cinematográfica', 'ccpaschoal.github.io/meu-portfolio-webgl', WINE, 'p6')
 for n, num, t in [('t-sobre', '01', 'Quem sou eu'), ('t-sites', '02', 'Sites que eu criei'),
                   ('t-github', '03', 'Meu GitHub'), ('t-contato', '04', 'Vamos conversar?')]:
     label(n, num, t)
