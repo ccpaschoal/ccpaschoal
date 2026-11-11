@@ -9,7 +9,7 @@
   <img src="https://raw.githubusercontent.com/ccpaschoal/ccpaschoal/main/assets/t-sobre-light.svg" alt="01 Quem sou eu" width="100%">
 </picture>
 
-<img src="https://raw.githubusercontent.com/ccpaschoal/ccpaschoal/main/assets/bento.svg" alt="Sobre mim: transformo ideias em conteúdo visual para redes sociais. Formação: UFRJ, Bacharelado em Ciências Matemáticas. Social Media, Web Design e Ferramentas: Canva, Figma, HTML, CSS, JavaScript, Git e GitHub Pages." width="100%">
+<img src="https://raw.githubusercontent.com/ccpaschoal/ccpaschoal/main/assets/bento.svg" alt="Sobre mim: transformo ideias em conteúdo visual para redes sociais. Formação: UFRJ, Bacharelado em Ciências Matemáticas. Social Media, Web Design e Ferramentas: Canva, HTML, CSS e GitHub Pages." width="100%">
 
 <br><br>
 
